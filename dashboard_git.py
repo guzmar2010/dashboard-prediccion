@@ -7,15 +7,27 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 import pandas as pd
 import plotly.express as px
-
 import os
 
-# Definir la ruta correcta
-file_path_pronostico = "C:/UNAL_MINMINAS/Blackboard/Lectura_archivos/Valores_Pronosticados_Precipitacion_2025-2_Colombia.csv"
-df_pronostico = pd.read_csv(file_path_pronostico, sep="\t")
+import pandas as pd
 
-file_path_probabilidades = "C:/UNAL_MINMINAS/Blackboard/Lectura_archivos/Probabilidades_Pronosticadas_Precipitacion_2025-2_Colombia.csv"
-df_probabilidades = pd.read_csv(file_path_probabilidades, sep="\t")
+# URLs de los archivos en GitHub (crudas)
+url_pronostico = "https://raw.githubusercontent.com/guzmar2010/dashboard-prediccion/main/Valores_Pronosticados_Precipitacion_2025-2_Colombia.csv"
+url_probabilidades = "https://raw.githubusercontent.com/guzmar2010/dashboard-prediccion/main/Probabilidades_Pronosticadas_Precipitacion_2025-2_Colombia.csv"
+
+# Cargar los datos desde GitHub
+df_pronostico = pd.read_csv(url_pronostico, sep="\t") 
+df_probabilidades = pd.read_csv(url_probabilidades, sep="\t") 
+
+
+
+
+# Definir la ruta correcta
+# file_path_pronostico = "C:/UNAL_MINMINAS/Blackboard/Lectura_archivos/Valores_Pronosticados_Precipitacion_2025-2_Colombia.csv"
+# df_pronostico = pd.read_csv(file_path_pronostico, sep="\t")
+
+# file_path_probabilidades = "C:/UNAL_MINMINAS/Blackboard/Lectura_archivos/Probabilidades_Pronosticadas_Precipitacion_2025-2_Colombia.csv"
+# df_probabilidades = pd.read_csv(file_path_probabilidades, sep="\t")
 
 
 
