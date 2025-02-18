@@ -1,10 +1,11 @@
 services:
   - type: web
-    name: dashboard_git
+    name: dashboard_git  # Nombre de la app en Render
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: startCommand: gunicorn -b 0.0.0.0:10000 dashboard_git:server
+    buildCommand: pip install -r requirements.txt  # Instala dependencias
+    startCommand: gunicorn -b 0.0.0.0:10000 dashboard_git:server  # Ejecuta la app
     envVars:
       - key: PORT
         value: 10000
+
