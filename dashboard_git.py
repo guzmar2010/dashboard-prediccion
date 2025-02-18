@@ -248,9 +248,11 @@ def update_probabilidades(filtro, valor):
     
     return fig_mapa_prob, fig_bar_prob
 
-if __name__ == '__main__':
-    app.run_server(debug=True, host='127.0.0.1', port=8050)
+# if __name__ == '__main__':
+#     app.run_server(debug=True, host='127.0.0.1', port=8050)
 
+if __name__ == '__main__':
+    app.run_server(debug=False, host='0.0.0.0')
 
 
 
