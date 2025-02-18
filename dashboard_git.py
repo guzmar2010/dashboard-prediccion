@@ -11,11 +11,12 @@ import plotly.express as px
 import os
 
 # Definir la ruta correcta
-file_path_pronostico = os.path.join(os.getcwd(), "Valores_Pronosticados_Precipitacion_2025-2_Colombia.csv")
+file_path_pronostico = "C:/UNAL_MINMINAS/Blackboard/Lectura_archivos/Valores_Pronosticados_Precipitacion_2025-2_Colombia.csv"
 df_pronostico = pd.read_csv(file_path_pronostico, sep="\t")
 
-file_path_probabilidades = os.path.join(os.getcwd(), "Probabilidades_Pronosticadas_Precipitacion_2025-2_Colombia.csv")
+file_path_probabilidades = "C:/UNAL_MINMINAS/Blackboard/Lectura_archivos/Probabilidades_Pronosticadas_Precipitacion_2025-2_Colombia.csv"
 df_probabilidades = pd.read_csv(file_path_probabilidades, sep="\t")
+
 
 
 # Filtrar valores de -999
@@ -38,6 +39,7 @@ color_scales_probabilidad = {
 
 # Inicializar Dash
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
+server = app.server  # ✅ Render necesita esta línea
 
 # Layout de la app
 app.layout = html.Div([
@@ -252,7 +254,8 @@ if __name__ == '__main__':
 
 
 
-
+# app = Dash(__name__)
+# server = app.server
 
 
 
